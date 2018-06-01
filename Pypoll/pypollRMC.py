@@ -69,6 +69,7 @@ print("-------------------------")
 for x in range(len(totcandidates)):
     name = totcandidates[x]
     pvotes = (candidate.count(totcandidates[x]) * 100) / totvotes
+    pvotes = round(pvotes, 2)
     VE = candidate.count(totcandidates[x])
     print(f"{name}: {pvotes}% ({VE})")
 print("-------------------------")
@@ -87,6 +88,7 @@ with open("output.txt", 'w') as textfile:
     for x in range(len(totcandidates)):
         name = totcandidates[x]
         pvotes = (candidate.count(totcandidates[x]) * 100) / totvotes
+        pvotes = round(pvotes, 2)
         VE = (candidate.count(totcandidates[x]))
         print(f"{name}: {pvotes}% ({VE})", file=textfile)
     print("-------------------------",file=textfile)
